@@ -2,8 +2,6 @@ ARG PAYARA_VERSION=5.181
 
 FROM payara/micro:${PAYARA_VERSION}
 
-LABEL maintainer="richard.scholz@senacor.com"
-
 COPY payara-config.properties run_payara.sh ${PAYARA_PATH}/
 
 USER root

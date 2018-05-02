@@ -1,0 +1,1 @@
+# File of asadmin commands to run before the server boots

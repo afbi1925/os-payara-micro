@@ -16,9 +16,9 @@ USER root
 # extract the truststore so it is more easy to add own certificates. Also create a keystore file
 # create libs directory so we can use --addlibs without payara complaining
 # set ownership allow access with group root, which is required for openshift
-RUN jar xf payara-micro.jar MICRO-INF/domain/cacerts.jks \
+RUN jar xf payara-micro.jar MICRO-INF/domain/cacerts.jks MICRO-INF/domain/keystore.jks \
     && mv MICRO-INF/domain/cacerts.jks . \
-    && touch keystore.jks \
+    && mv MICRO-INF/domain/keystore.jks . \
     && mkdir libs \
     && chmod 755 run_payara.sh \
     && chown -R payara:root /opt/payara \
